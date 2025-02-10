@@ -4,10 +4,10 @@ const InicioController = require('../controllers/InicioController');
 class HomeRoute{
     #router
     get router() {
-        return this.#router
+        return this.#router;
     }
    set router(router) {
-        this.#router = router
+        this.#router = router;
     }
     constructor() {
         this.#router = express.Router();
@@ -15,7 +15,6 @@ class HomeRoute{
         let ctrl= new InicioController();
         this.#router.get('/',ctrl.inicioView);
 
-
-    }
+}
 }
 module.exports=HomeRoute;
