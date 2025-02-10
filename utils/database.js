@@ -4,16 +4,18 @@ class Database {
 
     #conexao;
 
-    get conexao() { return this.#conexao;} set conexao(conexao) { this.#conexao = conexao; }
+    get conexao() { return this.#conexao;} 
+    set conexao(conexao) { this.#conexao = conexao; }
 
     constructor() {
 
         this.#conexao = mysql.createPool({
-            host: '132.226.245.178', //endereço do nosso banco de dados na nuvem
-            database: 'PFS1_(RA)', //a database de cada um de vocês possui a nomenclatura DB_(RA)
-            user: '(RA)', // usuario e senha de cada um de vocês é o RA
-            password: '(RA)',
+            host: '127.0.0.1', //endereço do nosso banco de dados na nuvem
+            database: 'renan', //a database de cada um de vocês possui a nomenclatura DB_(RA)
+            user: 'root', // usuario e senha de cada um de vocês é o RA
+            password: '',
         });
+        
     }
 
     ExecutaComando(sql, valores) {
@@ -55,6 +57,3 @@ class Database {
 }
 
 module.exports = Database;
-
-
-
