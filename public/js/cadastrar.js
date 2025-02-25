@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let stringObj = JSON.stringify(obj);
 
-        fetch('/', {
+        fetch('/cadastro', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

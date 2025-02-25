@@ -7,6 +7,6 @@ const router = express.Router();
 let ctrl = new InicioController();
 
 router.get('/', ctrl.inicioView);
-router.post('/', ctrl.inicio);
+router.post('/cadastro', ctrl.inicio);
 
 module.exports = router;

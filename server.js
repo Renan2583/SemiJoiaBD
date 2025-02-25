@@ -7,6 +7,10 @@ const expressEjsLayouts = require('express-ejs-layouts');
 const app = express();
 const path = require('path');
 
+const cors = require('cors');
+app.use(cors());  // Permite requisições de qualquer origem
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
