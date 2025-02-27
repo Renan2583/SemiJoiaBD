@@ -20,7 +20,12 @@ app.get('/favicon.ico', (req, res) => {
 });
 
 app.set('view engine', 'ejs');
-app.set('layout', './layout');
+
+app.post('/', (req, res) => {
+    console.log('Dados recebidos:', req.body); // Verifica se os dados chegam corretamente
+    res.json({ ok: true, msg: 'Cadastro realizado com sucesso!' });
+});
+
 
 app.use(express.static(path.join(__dirname, 'public'))); // para o tailwind funcionar
 app.use(expressEjsLayouts);

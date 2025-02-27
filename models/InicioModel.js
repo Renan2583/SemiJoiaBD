@@ -1,6 +1,10 @@
 const Database = require("../utils/database");
 const db = new Database();
 
+db.ExecutaComando('SELECT 1', [])
+    .then(() => console.log('Conexão com o banco de dados bem-sucedida!'))
+    .catch(err => console.error('Erro ao conectar ao banco de dados:', err));
+
 class inicioModel {
   #id;
   #nome;
@@ -63,12 +67,22 @@ class inicioModel {
 
 
   async cadastrar() {
-    let sql = 'inser into pecas (peca_nome, peca_forn, peca_prpg, peca_prvd, peca_qnt)values (?, ?, ?, ?, ?)';
+    let sql = 'INSERT INTO tb_pecas (peca_nome, peca_forn, peca_prpg, peca_prvd, peca_qnt) VALUES (?, ?, ?, ?, ?)';
     let valores = [this.#nome, this.#fornecedor, this.#precopago, this.#precovenda, this.#quant];
-    let resultado = await db
-    .ExecutaComandoNonQuery(sql, valores);
-    return resultado;
-  }
+
+    console.log("Tentando inserir:", valores); // Verifica os valores antes de salvar
+
+    try {
+        let resultado = await db.ExecutaComandoNonQuery(sql, valores);
+        console.log("Resultado do banco:", resultado);
+        return resultado;
+    } catch (error) {
+        console.error("Erro ao inserir no banco:", error);
+        return { ok: false, msg: "Erro ao cadastrar no banco." };
+    }
 }
+
+}
+  
 
 module.exports = inicioModel;

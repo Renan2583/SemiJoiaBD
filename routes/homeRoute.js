@@ -9,4 +9,6 @@ let ctrl = new InicioController();
 router.get('/', ctrl.inicioView);
 router.post('/cadastro', ctrl.inicio);
 
+
+
 module.exports = router;
