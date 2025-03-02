@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const nome = document.getElementById("nome");
     const fornecedor = document.getElementById("fornecedor");
-    const precocompra = document.getElementById("precocompra");
-    const precovenda = document.getElementById("precovenda");
+    const precoproduto = document.getElementById("preco1");
+    const precovenda = document.getElementById("preco2");
     const quant = document.getElementById("quant");
 
     let obj = {
       nome: nome.value,
       fornecedor: fornecedor.value,
-      precoproduto: precocompra.value,
+      precoproduto: precoproduto.value,
       precovenda: precovenda.value,
       quant: quant.value,
       };
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let stringObj = JSON.stringify(obj);
 
-    fetch("/", {
+    fetch("/cadastro", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
