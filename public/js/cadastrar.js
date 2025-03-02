@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const nome = document.getElementById("nome");
     const fornecedor = document.getElementById("fornecedor");
-    const precoproduto = document.getElementById("preco1");
-    const precovenda = document.getElementById("preco2");
+    const precocompra = document.getElementById("precocompra");
+    const precovenda = document.getElementById("precovenda");
     const quant = document.getElementById("quant");
 
     let obj = {
       nome: nome.value,
       fornecedor: fornecedor.value,
-      precoproduto: precoproduto.value,
+      precocompra: precocompra.value,
       precovenda: precovenda.value,
       quant: quant.value,
       };
