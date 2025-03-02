@@ -9,15 +9,15 @@ class inicioModel {
   #id;
   #nome;
   #fornecedor;
-  #precopago;
+  #precocompra;
   #precovenda;
   #quant;
 
-  constructor(id, nome, fornecedor, precopago, precovenda, quant) {
+  constructor(id, nome, fornecedor, precocompra, precovenda, quant) {
     this.#id = id;
     this.#nome = nome;
     this.#fornecedor = fornecedor;
-    this.#precopago = precopago;
+    this.#precocompra = precocompra;
     this.#precovenda = precovenda;
     this.#quant = quant;
   }
@@ -31,8 +31,8 @@ class inicioModel {
   get fornecedor() {
     return this.#fornecedor;
   }
-  get precopago() {
-    return this.#precopago;
+  get precocompra() {
+    return this.#precocompra;
   }
   get precovenda() {
     return this.#precovenda;
@@ -53,8 +53,8 @@ class inicioModel {
     this.#fornecedor = value;
   }
 
-  set precopago(value) {
-    this.#precopago = value;
+  set precocompra(value) {
+    this.#precocompra = value;
   }
 
   set precovenda(value) {
@@ -67,8 +67,8 @@ class inicioModel {
 
 
   async cadastrar() {
-    let sql = 'INSERT INTO tb_pecas (peca_nome, peca_forn, peca_prpg, peca_prvd, peca_qnt) VALUES (?, ?, ?, ?, ?)';
-    let valores = [this.#nome, this.#fornecedor, this.#precopago, this.#precovenda, this.#quant];
+    let sql = `INSERT INTO tb_pecas (peca_nome, peca_forn, peca_prpg, peca_prvd, peca_qnt) VALUES (?, ?, ?, ?, ?)`;
+    let valores = [this.#nome, this.#fornecedor, this.#precocompra, this.#precovenda, this.#quant];
 
     console.log("Tentando inserir:", valores); // Verifica os valores antes de salvar
 
