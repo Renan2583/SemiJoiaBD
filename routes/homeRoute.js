@@ -2,13 +2,13 @@ const express = require('express');
 
 const InicioController = require('../controllers/InicioController');
 
-const router = express.Router();
+const exiberouter = express.Router();
 
 let ctrl = new InicioController();
 
-router.get('/', ctrl.inicioView);
-router.post('/cadastro', ctrl.inicio);
+exiberouter.get('/', ctrl.inicioView); //inicio da pagina
+exiberouter.post('/cadastro', ctrl.inicio); //rota para o cadastro
 
 
 
-module.exports = router;
+module.exports = exiberouter;

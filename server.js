@@ -8,6 +8,7 @@ const app = express();
 const path = require('path');
 
 const cors = require('cors');
+const exiberouter = require('./routes/homeRoute');
 app.use(cors());  // Permite requisições de qualquer origem
 
 
@@ -28,7 +29,6 @@ app.post('/', (req, res) => {
     console.log('Dados recebidos:', req.body); // Verifica se os dados chegam corretamente
     res.json({ ok: true, msg: 'Cadastro realizado com sucesso!' });
 });
-
 
 app.use(express.static(path.join(__dirname, 'public'))); // para o tailwind funcionar
 app.use(expressEjsLayouts);

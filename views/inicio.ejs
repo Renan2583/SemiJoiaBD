@@ -30,8 +30,37 @@
             
             
                 <button type="button" class="btn btn-primary"id="btnCadastrar">Cadastrar</button>
+                
             
         </form>
     </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Fornecedor</th>
+                <th>Preço Pago</th>
+                <th>Preço De Venda</th>
+                <th>Quantidade</th>
+
+                
+            </tr>
+        </thead>
+    
+        <tbody>
+            
+                <% for(let i=0;i<lista.length;i++) { %>
+                    <tr>
+                        <td><%= lista[i].nome %></td>
+                        <td><%= lista[i].fornecedor %></td>
+                        <td><%= lista[i].precocompra %></td>
+                        <td><%= lista[i].precovenda %></td>
+                        <td><%= lista[i].quant %></td>>
+                    </tr>
+               <% } %>
+            
+        </tbody>
+    </table>
 </body>
 </html>
