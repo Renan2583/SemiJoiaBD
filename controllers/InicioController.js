@@ -21,6 +21,7 @@ class InicioController {
     async inicio(req, res) {
         let ok;
         
+        
         if (req.body.nome  && req.body.precocompra && req.body.precovenda && req.body.quant) {
             let cadastrarPeca = new inicioModel();
             cadastrarPeca.nome = req.body.nome;
@@ -28,7 +29,7 @@ class InicioController {
             cadastrarPeca.precocompra = req.body.precocompra;
             cadastrarPeca.precovenda = req.body.precovenda;
             cadastrarPeca.quant = req.body.quant;
-           cadastrarPeca.imagem = req.body.imagem
+            cadastrarPeca.imagem = req.file ? req.file.filename : null;
             
 
 

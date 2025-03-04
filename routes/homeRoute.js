@@ -1,10 +1,13 @@
 const express = require('express');
-
-
+const multer = require("multer");
+const path = require("path");
 
 const InicioController = require('../controllers/InicioController');
 
 const homeRouter = express.Router();
+
+
+
 
 let ctrl = new InicioController();
 

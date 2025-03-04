@@ -12,7 +12,7 @@ const exiberouter = require('./routes/homeRoute');
 app.use(cors());  // Permite requisições de qualquer origem
 
 
-
+app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

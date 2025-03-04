@@ -25,7 +25,7 @@
     <tbody>
         
             <% for(let i=0;i<lista.length;i++) { %>
-                <tr class="<%= i % 2 === 0 ? 'table-primary' : '' %>">
+                <tr class="<%= i % 2 === 0 ? 'table-primary' : '' %> ">
                     <td><%= lista[i].nome %></td>
                     <td><%= lista[i].fornecedor %></td>
                     <td>R$ <%= lista[i].precocompra %></td>
@@ -33,6 +33,7 @@
                     <td><%= lista[i].quant %></td>
                     <td><img src="<%= lista[i].imagem %>" alt="Imagem"></td>
                 </tr>
+                
            <% } %>
         
     </tbody>

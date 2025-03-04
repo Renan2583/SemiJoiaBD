@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const precocompra = document.getElementById("precocompra");
     const precovenda = document.getElementById("precovenda");
     const quant = document.getElementById("quant");
-    const imagem = document.getElementById("imagem");
+    const imagem = document.getElementById("imagem").files[0];
 
     let obj = {
       nome: nome.value,
@@ -19,9 +19,14 @@ document.addEventListener("DOMContentLoaded", function () {
       precocompra: precocompra.value,
       precovenda: precovenda.value,
       quant: quant.value,
-      imagem: imagem.value
     };
       console.log("Dados enviados:", obj);
+
+      let formData = new FormData();
+      formData.append("dados", JSON.stringify(obj)); // Adiciona os dados como JSON
+      formData.append("imagem", imagem); // Adiciona a imagem separadamente
+  
+      console.log("Enviando:", formData);
 
     let stringObj = JSON.stringify(obj);
 
