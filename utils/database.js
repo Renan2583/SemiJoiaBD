@@ -30,6 +30,7 @@ class Database {
         })
     }
     
+    
     ExecutaComandoNonQuery(sql, valores) {
         var cnn = this.#conexao;
         return new Promise(function(res, rej) {

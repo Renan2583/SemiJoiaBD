@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form method="post" style="display: flex; justify-content: center; margin-top: 150px; flex-direction: column; gap: 5px; width: 350px; margin: 0 auto;">
+        <form method="post" style="display: flex; justify-content: center; margin-top: 150px; flex-direction: column; gap: 5px; width: 350px; margin: 0 auto;" enctype="multipart/form-data">
 
             
             <label for="nome">Nome</label>
@@ -28,7 +28,9 @@
             <label for="quant">Quantidade</label>
             <input class="quant" type="number" id="quant" name="quant" required>
 
-            <input type="file" id="imagem" accept="image/* required"> <!-- Adiciona imagem -->
+            <input type="file" name="imagem" id="imagem" required><!-- Adiciona imagem -->
+
+            
             
             
                 <button type="button" class="btn btn-primary"id="btnCadastrar">Cadastrar</button>

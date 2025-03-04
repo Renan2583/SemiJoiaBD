@@ -22,6 +22,9 @@ app.get('/favicon.ico', (req, res) => {
 
 app.set('view engine', 'ejs');
 
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 app.use("/", homeRoute);
 
@@ -31,14 +34,6 @@ app.post('/exibir', (req, res) => {
 });
 
 
-
-
-
-
-
-
-
-app.use(express.static(path.join(__dirname, 'public'))); // para o tailwind funcionar
 app.use(expressEjsLayouts);
 
 
