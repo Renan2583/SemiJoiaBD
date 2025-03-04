@@ -13,12 +13,12 @@
   <table class="table">
     <thead>
         <tr>
+            <th>ID</th>
             <th>Nome</th>
             <th>Fornecedor</th>
             <th>Preço Pago</th>
             <th>Preço De Venda</th>
             <th>Quantidade</th>
-            <th>Imagem</th>
         </tr>
     </thead>
 
@@ -26,12 +26,12 @@
         
             <% for(let i=0;i<lista.length;i++) { %>
                 <tr class="<%= i % 2 === 0 ? 'table-primary' : '' %> ">
+                    <td><%=lista[i].id %></td>
                     <td><%= lista[i].nome %></td>
                     <td><%= lista[i].fornecedor %></td>
                     <td>R$ <%= lista[i].precocompra %></td>
                     <td>R$ <%= lista[i].precovenda %></td>
                     <td><%= lista[i].quant %></td>
-                    <td><img src="<%= lista[i].imagem %>" alt="Imagem"></td>
                 </tr>
                 
            <% } %>

@@ -99,7 +99,7 @@ async listar () {
   let listaCadastro = [];
   for(let registro of resultado) {
       listaCadastro.push(new inicioModel(
-          registro['peca_id'],
+          registro['id'],
           registro['peca_nome'],
           registro['peca_forn'],
           registro['peca_prpg'],
