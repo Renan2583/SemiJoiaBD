@@ -30,6 +30,12 @@ app.post('/', (req, res) => {
     res.json({ ok: true, msg: 'Cadastro realizado com sucesso!' });
 });
 
+app.use("/exibe", exiberouter);
+
+
+
+
+
 app.use(express.static(path.join(__dirname, 'public'))); // para o tailwind funcionar
 app.use(expressEjsLayouts);
 

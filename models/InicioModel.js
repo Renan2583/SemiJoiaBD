@@ -99,6 +99,7 @@ async listar () {
       ));
   }
   return listaCadastro;
+  
 }
 
 }
