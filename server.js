@@ -25,12 +25,14 @@ app.set('view engine', 'ejs');
 
 app.use("/", homeRoute);
 
-app.post('/', (req, res) => {
+app.post('/exibir', (req, res) => {
     console.log('Dados recebidos:', req.body); // Verifica se os dados chegam corretamente
     res.json({ ok: true, msg: 'Cadastro realizado com sucesso!' });
 });
 
-app.use("/exibe", exiberouter);
+
+
+
 
 
 

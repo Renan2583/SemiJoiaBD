@@ -7,6 +7,13 @@ class InicioController {
 
         res.render('inicio', {lista: listarTudo})
     }
+
+    async exibeView(req,res){
+        let listarTudo = new inicioModel();
+        listarTudo = await listarTudo.listar();
+
+        res.render('exibir', {lista: listarTudo})
+    }
     
     async inicio(req, res) {
         let ok;
