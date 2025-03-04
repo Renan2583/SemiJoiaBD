@@ -5,12 +5,26 @@ class InicioController {
         let listarTudo = new inicioModel();
         listarTudo = await listarTudo.listar();
 
+        listarTudo = listarTudo.map(item => {
+            if (item.imagem) {
+                item.imagemBase64 = item.imagem.toString('base64'); // Convertendo para Base64
+            }
+            return item;
+        });
+
         res.render('inicio', {lista: listarTudo})
     }
 
     async exibeView(req,res){
         let listarTudo = new inicioModel();
         listarTudo = await listarTudo.listar();
+
+        listarTudo = listarTudo.map(item => {
+            if (item.imagem) {
+                item.imagemBase64 = item.imagem.toString('base64'); // Convertendo para Base64
+            }
+            return item;
+        });
 
         res.render('exibir', {lista: listarTudo})
     }
@@ -25,6 +39,7 @@ class InicioController {
             cadastrarPeca.precocompra = req.body.precocompra;
             cadastrarPeca.precovenda = req.body.precovenda;
             cadastrarPeca.quant = req.body.quant;
+            cadastrarPeca.imagem = req.body.imagem;
 
             let resultado = await cadastrarPeca.cadastrar();
 

@@ -30,6 +30,13 @@
                     <td><%= lista[i].precocompra %></td>
                     <td><%= lista[i].precovenda %></td>
                     <td><%= lista[i].quant %></td>
+                    <td>
+                        <% if (lista[i].imagemBase64) { %>
+                            <img src="data:image/jpeg;base64,<%= lista[i].imagemBase64 %>" alt="Imagem" style="width: 100px; height: 100px;">
+                        <% } else { %>
+                            <p>Sem imagem</p>
+                        <% } %>
+                    </td>
                 </tr>
            <% } %>
         

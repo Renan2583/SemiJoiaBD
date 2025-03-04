@@ -12,14 +12,16 @@ class inicioModel {
   #precocompra;
   #precovenda;
   #quant;
+  #imagem;
 
-  constructor(id, nome, fornecedor, precocompra, precovenda, quant) {
+  constructor(id, nome, fornecedor, precocompra, precovenda, quant,imagem) {
     this.#id = id;
     this.#nome = nome;
     this.#fornecedor = fornecedor;
     this.#precocompra = precocompra;
     this.#precovenda = precovenda;
     this.#quant = quant;
+    this.#imagem = imagem;
   }
 
   get id() {
@@ -39,6 +41,10 @@ class inicioModel {
   }
   get quant() {
     return this.#quant;
+  }
+
+  get imagem() {
+    return this.#imagem;
   }
 
   set id(value) {
@@ -65,10 +71,14 @@ class inicioModel {
     this.#quant = value;
   }
 
+  set imagem(value) {
+    this.#imagem = value;
+  }
+
 
   async cadastrar() {
-    let sql = `INSERT INTO tb_pecas (peca_nome, peca_forn, peca_prpg, peca_prvd, peca_qnt) VALUES (?, ?, ?, ?, ?)`;
-    let valores = [this.#nome, this.#fornecedor, this.#precocompra, this.#precovenda, this.#quant];
+    let sql = `INSERT INTO tb_pecas (peca_nome, peca_forn, peca_prpg, peca_prvd, peca_qnt, peca_img) VALUES (?, ?, ?, ?, ?,?)`;
+    let valores = [this.#nome, this.#fornecedor, this.#precocompra, this.#precovenda, this.#quant, this.#imagem];
 
     console.log("Tentando inserir:", valores); // Verifica os valores antes de salvar
 
@@ -94,7 +104,8 @@ async listar () {
           registro['peca_forn'],
           registro['peca_prpg'],
           registro['peca_prvd'],
-          registro['peca_qnt']
+          registro['peca_qnt'],
+          registro['peca_img']
           
       ));
   }

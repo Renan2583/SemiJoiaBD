@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const precocompra = document.getElementById("precocompra");
     const precovenda = document.getElementById("precovenda");
     const quant = document.getElementById("quant");
+    const imagem = document.getElementById("imagem");
 
     let obj = {
       nome: nome.value,
@@ -18,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
       precocompra: precocompra.value,
       precovenda: precovenda.value,
       quant: quant.value,
-      };
+      imagem: imagem.value
+    };
       console.log("Dados enviados:", obj);
 
     let stringObj = JSON.stringify(obj);
